@@ -1,16 +1,35 @@
 // 412. Fizz Buzz
+// Given an integer n, return a string array answer (1-indexed) where:
+// answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+// answer[i] == "Fizz" if i is divisible by 3.
+// answer[i] == "Buzz" if i is divisible by 5.
+// answer[i] == i (as a string) if none of the above conditions are true.
 var fizzBuzz = function (n) {
-  let output = [];
+  let array = [];
   for (let i = 1; i <= n; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
-      output.push("FizzBuzz");
+      array.push("FizzBuzz");
     } else if (i % 3 === 0) {
-      output.push("Fizz");
+      array.push("Fizz");
     } else if (i % 5 === 0) {
-      output.push("Buzz");
+      array.push("Buzz");
     } else {
-      output.push(i.toString());
+      array.push(i.toString());
     }
   }
-  return output;
+  return array;
+};
+
+// 1. Two Sum
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+// You can return the answer in any order.
+var twoSum = function (nums, target) {
+  for (let i = 0; i <= nums.length; i++) {
+    for (let j = 0; j <= nums.length; j++) {
+      if (nums[i] + nums[j] == target) {
+        return [i, j];
+      }
+    }
+  }
 };
