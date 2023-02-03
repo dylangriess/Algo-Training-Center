@@ -163,3 +163,23 @@ var wordPattern = function (pattern, s) {
 //Given an array of integers arr of even length n and an integer k.
 //We want to divide the array into exactly n / 2 pairs such that the sum of each pair is divisible by k.
 //Return true If you can find a way to do that or false otherwise.
+var canArrange = function (arr, k) {
+  const remainders = new Map();
+  for (const num of arr) {
+    const remainder = num % k;
+    remainders.set(remainder, (remainders.get(remainder) || 0) + 1);
+  }
+  for (const num of arr) {
+    const remainder = num % k;
+    if (remainders.get(remainder) > 0) {
+      const complement = (k - remainder) % k;
+      if (remainders.get(complement) > 0) {
+        remainders.set(remainder, remainders.get(remainder) - 1);
+        remainders.set(complement, remainders.get(complement) - 1);
+      } else {
+        return false;
+      }
+    }
+  }
+  return true;
+};
