@@ -282,3 +282,17 @@ var generate = function (numRows) {
 //169. Majority Element
 //Given an array nums of size n, return the majority element.
 //The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+var majorityElement = function (nums) {
+  let counts = new Map();
+  let majority = Math.floor(nums.length / 2);
+  for (let num of nums) {
+    if (!counts.has(num)) {
+      counts.set(num, 1);
+    } else {
+      counts.set(num, counts.get(num) + 1);
+    }
+    if (counts.get(num) > majority) {
+      return num;
+    }
+  }
+};
