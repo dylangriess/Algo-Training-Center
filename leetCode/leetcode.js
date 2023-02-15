@@ -296,3 +296,8 @@ var majorityElement = function (nums) {
     }
   }
 };
+
+//183. Customers Who Never Order
+//SQL Schema
+//Write an SQL query to report all customers who never order anything.
+//Return the result table in any order.
