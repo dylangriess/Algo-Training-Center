@@ -349,3 +349,20 @@ function singleNumber(nums) {
 //1: Your guess is lower than the number I picked (i.e. num < pick).
 //0: your guess is equal to the number I picked (i.e. num == pick).
 //Return the number that I picked.
+var guessNumber = function (n) {
+  let left = 1;
+  let right = n;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    const res = guess(mid);
+
+    if (res === 0) {
+      return mid;
+    } else if (res === 1) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+};
