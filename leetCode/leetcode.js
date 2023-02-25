@@ -372,3 +372,17 @@ var guessNumber = function (n) {
 //F(0) = 0, F(1) = 1
 //F(n) = F(n - 1) + F(n - 2), for n > 1.
 //Given n, calculate F(n).
+
+var fib = function (n) {
+  if (n <= 1) {
+    return n;
+  }
+  let prev = 0;
+  let curr = 1;
+  for (let i = 2; i <= n; i++) {
+    let next = prev + curr;
+    prev = curr;
+    curr = next;
+  }
+  return curr;
+};
