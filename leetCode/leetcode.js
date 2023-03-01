@@ -402,3 +402,8 @@ var fib = function (n) {
 //Each row of this table indicates the name of a student and the class in which they are enrolled.
 //Write an SQL query to report all the classes that have at least five students.
 //Return the result table in any order.
+
+//SELECT class
+//FROM Courses
+//GROUP BY class
+//HAVING COUNT(DISTINCT student) >= 5;
