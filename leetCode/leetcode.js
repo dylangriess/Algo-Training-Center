@@ -397,3 +397,8 @@ var fib = function (n) {
 //SELECT name, population, area
 //FROM World
 //WHERE area >= 3000000 OR population >= 25000000;
+
+// 596. Classes More Than 5 Students
+//Each row of this table indicates the name of a student and the class in which they are enrolled.
+//Write an SQL query to report all the classes that have at least five students.
+//Return the result table in any order.
