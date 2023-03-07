@@ -411,3 +411,14 @@ var fib = function (n) {
 //58. Length of Last Word
 //Given a string s consisting of words and spaces, return the length of the last word in the string.
 //A word is a maximal substring consisting of non-space characters only.
+
+function lengthOfLastWord(s) {
+  s = s.trim();
+  let lastSpaceIndex = s.lastIndexOf(" ");
+  // If there are no spaces, the entire string is a word
+  if (lastSpaceIndex === -1) {
+    return s.length;
+  }
+  // Otherwise, return the length of the last word
+  return s.length - lastSpaceIndex - 1;
+}
